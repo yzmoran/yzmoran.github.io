@@ -74,9 +74,10 @@ const nextButton = document.getElementById('next-button');
 const songName = document.getElementById('song-name');
 
 const songs = [
-    { name: 'Living Mice', src: 'Living_Mice.m4a' },
+    { name: 'Living Mice - 就像你', src: 'Living_Mice.m4a' },
     { name: 'Clark', src: 'Clark.m4a' },
-    { name: 'Key', src: 'Key.m4a' }
+    { name: 'Key', src: 'Key.m4a' },
+	{ name: 'Aria Math - 停止敲我家的铝盆！', src: 'Aria_Math.m4a' }
 ];
 
 let currentSongIndex = 0;
