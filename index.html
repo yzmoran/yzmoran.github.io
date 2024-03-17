@@ -27,18 +27,46 @@
         </div>
     </div>
 
-    <div class="music-player">
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="https://music.163.com/outchain/player?type=0&id=123456&auto=1&height=430"></iframe>
+    <div class="content">
+        <div class="music-player">
+            <div id="player-controls">
+                <button id="prev-button">
+                    上一首
+                </button>
+                <button id="play-button">
+                    播放
+                </button>
+                <button id="next-button">
+                    下一首
+                </button>
+            </div>
+            <div id="song-info">
+                <span id="song-name"></span>
+            </div>
+            <audio id="audio-player" src="" preload="metadata"></audio>
+        </div>
+
+        <div class="site-navigation">
+            <h2>常用网站导航</h2>
+            <div class="button-group">
+                <a href="https://www.example1.com" target="_blank" class="glass-btn">网站1</a>
+                <a href="https://www.example2.com" target="_blank" class="glass-btn">网站2</a>
+                <a href="https://www.example3.com" target="_blank" class="glass-btn">网站3</a>
+                <a href="https://www.example4.com" target="_blank" class="glass-btn">网站4</a>
+            </div>
+        </div>
     </div>
 
-    <div class="site-navigation">
-        <h2>常用网站导航</h2>
-        <ul>
-            <li><a href="https://www.example1.com" target="_blank">网站1</a></li>
-            <li><a href="https://www.example2.com" target="_blank">网站2</a></li>
-            <li><a href="https://www.example3.com" target="_blank">网站3</a></li>
-            <li><a href="https://www.example4.com" target="_blank">网站4</a></li>
-        </ul>
+    <div class="info-panel">
+        <div id="hitokoto"></div>
+        <div id="weather">
+            <span id="city_text"></span>
+            <span id="wea_text"></span>
+            <span id="tem_text"></span>
+            <span id="win_text"></span>
+            <span id="win_speed"></span>
+        </div>
+        <div id="clock"></div>
     </div>
 
     <div id="click-effect"></div>
