@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    background-image: url('https://api.imlazy.ink/img?type=#/') !important;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.search-bar, .personal-info, .music-player, .site-navigation {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+}
+
+.search-bar {
+    text-align: center;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.personal-info {
+    display: flex;
+    align-items: center;
+}
+
+.personal-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.info h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.info p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.contact a {
+    margin-right: 10px;
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+.music-player {
+    width: 30%;
+    float: left;
+}
+
+.site-navigation {
+    width: calc(50% - 60px);
+    float: right;
+}
+
+.site-navigation h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+.site-navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.site-navigation li {
+    margin-bottom: 5px;
+}
+
+.site-navigation a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+#click-effect {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(30, 136, 229, 0.3);
+    animation: clickEffect 0.5s ease-out;
+}
+
+@keyframes clickEffect {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-bar">
+        <form action="https://www.bing.com/search" method="get" target="_blank">
+            <input type="text" name="q" placeholder="使用 Bing 搜索...">
+            <button type="submit">搜索</button>
+        </form>
+    </div>
+
+    <div class="personal-info">
+        <img src="avatar.jpg" alt="个人图片">
+        <div class="info">
+            <h1>张三</h1>
+            <p>个性签名: 生命不止,奋斗不息。</p>
+            <div class="contact">
+                <a href="https://space.bilibili.com/123456" target="_blank">Bilibili</a>
+                <a href="mailto:zhangsan@example.com">Email</a>
+                <a href="https://qm.qq.com/cgi-bin/qm/qr?k=abcdefg" target="_blank">QQ</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="music-player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="https://music.163.com/outchain/player?type=0&id=123456&auto=1&height=430"></iframe>
+    </div>
+
+    <div class="site-navigation">
+        <h2>常用网站导航</h2>
+        <ul>
+            <li><a href="https://www.example1.com" target="_blank">网站1</a></li>
+            <li><a href="https://www.example2.com" target="_blank">网站2</a></li>
+            <li><a href="https://www.example3.com" target="_blank">网站3</a></li>
+            <li><a href="https://www.example4.com" target="_blank">网站4</a></li>
+        </ul>
+    </div>
+
+    <div id="click-effect"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
