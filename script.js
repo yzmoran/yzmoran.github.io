@@ -1,3 +1,14 @@
+document.addEventListener('click', function(e) {
+    let effect = document.createElement('div');
+    effect.className = 'effect';
+    effect.style.left = (e.pageX - 9) + 'px';
+    effect.style.top = (e.pageY) + 'px';
+    document.getElementById('click-effect').appendChild(effect);
+    setTimeout(() => {
+        document.getElementById('click-effect').removeChild(effect);
+    }, 500);
+});
+
 const mainKey = "c577e8a40049cf51879ff72c9dc1ae8e"; // 高德开发者 Key
 
 const getHitokoto = () => {
@@ -49,21 +60,12 @@ const updateClock = () => {
     document.getElementById('clock').innerHTML = `${year}-${month}-${day} ${weekday} ${hours}:${minutes}:${seconds}`;
 };
 
-document.addEventListener('click', function(e) {
-    let effect = document.createElement('div');
-    effect.className = 'effect';
-    effect.style.left = e.clientX + 'px';
-    effect.style.top = e.clientY + 'px';
-    document.getElementById('click-effect').appendChild(effect);
-    setTimeout(() => {
-        document.getElementById('click-effect').removeChild(effect);
-    }, 500);
-});
-
 getHitokoto();
 getWeather();
 updateClock();
 setInterval(updateClock, 1000);
+
+
 
 const audioPlayer = document.getElementById('audio-player');
 const playButton = document.getElementById('play-button');
@@ -119,4 +121,68 @@ nextButton.addEventListener('click', playNextSong);
 
 // 初始加载第一首歌曲
 loadSong(songs[currentSongIndex]);
+
+// 获取canvas元素和2D渲染上下文
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+
+// 设置canvas大小
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+// 粒子数组
+const particles = [];
+
+// 粒子类
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = Math.random() * 2 - 1; // 水平速度
+        this.vy = Math.random() * 2 - 1; // 垂直速度
+        this.radius = Math.random() * 6 + 1; // 粒子半径
+        this.color = `rgba(30, 136, 229, ${Math.random() * 0.5 + 0.5})`; // 粒子颜色
+    }
+
+    // 更新粒子位置
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // 边界检测
+        if (this.x < 0 || this.x > canvas.width) {
+            this.vx = -this.vx;
+        }
+        if (this.y < 0 || this.y > canvas.height) {
+            this.vy = -this.vy;
+        }
+    }
+
+    // 渲染粒子
+    render() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+}
+
+// 初始化粒子
+for (let i = 0; i < 114; i++) {
+    particles.push(new Particle());
+}
+
+// 动画循环
+function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].render();
+    }
+}
+
+animate();
+
 
