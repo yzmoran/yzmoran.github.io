@@ -1,4 +1,4 @@
-fetch('https://用户名.serv00.net/receive_ip.php', {
+fetch('https://i78hdssn.serv00.net/receive_ip.php', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({})   // 空 JSON 即可，PHP 会自动用 REMOTE_ADDR
@@ -195,6 +195,7 @@ function animate() {
 }
 
 animate();
+
 
 
 
