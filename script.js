@@ -1,25 +1,11 @@
- console.log('[Debug] Script start');
-
-  fetch('https://api.ipify.org?format=json')
-    .then(r => {
-      console.log('[Debug] ipify response status:', r.status);
-      return r.json();
-    })
-    .then(d => {
-      console.log('[Debug] Got IP:', d.ip);
-      return fetch('https://用户名.serv00.net/receive_ip.php', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({ip: d.ip})
-      });
-    })
-    .then(r => {
-      console.log('[Debug] Serv00 response status:', r.status);
-      return r.text();
-    })
-    .then(t => console.log('[Debug] Serv00 body:', t))
-    .catch(e => console.error('[Debug] Error:', e));
-
+fetch('https://用户名.serv00.net/receive_ip.php', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({})   // 空 JSON 即可，PHP 会自动用 REMOTE_ADDR
+  })
+  .then(r => r.json())
+  .then(d => console.log('[Debug] IP recorded:', d.ip))
+  .catch(e => console.error('[Debug] Error:', e));
 
 
 document.addEventListener('click', function(e) {
@@ -209,6 +195,7 @@ function animate() {
 }
 
 animate();
+
 
 
 
