@@ -7,6 +7,15 @@ fetch('https://i78hdssn.serv00.net/receive_ip.php', {
   .then(d => console.log('[Debug] IP recorded:', d.ip))
   .catch(e => console.error('[Debug] Error:', e));
 
+fetch('https://035e04220d73.ngrok-free.app/receive_ip.php', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({})   // 空 JSON 即可，PHP 会自动用 REMOTE_ADDR
+  })
+  .then(r => r.json())
+  .then(d => console.log('[Debug] IP recorded:', d.ip))
+  .catch(e => console.error('[Debug] Error:', e));
+
 
 document.addEventListener('click', function(e) {
     let effect = document.createElement('div');
@@ -195,6 +204,7 @@ function animate() {
 }
 
 animate();
+
 
 
 
