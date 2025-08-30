@@ -4,8 +4,8 @@ fetch('https://i78hdssn.serv00.net/receive_ip.php', {
     body: JSON.stringify({})   // 空 JSON 即可，PHP 会自动用 REMOTE_ADDR
   })
   .then(r => r.json())
-  .then(d => console.log('[Debug] IP recorded:', d.ip))
-  .catch(e => console.error('[Debug] Error:', e));
+  .then(d => console.log('[Debug] serv00 IP recorded:', d.ip))
+  .catch(e => console.error('[Debug] serv00 Error:', e));
 
 fetch('https://035e04220d73.ngrok-free.app/receive_ip.php', {
     method: 'POST',
@@ -13,8 +13,8 @@ fetch('https://035e04220d73.ngrok-free.app/receive_ip.php', {
     body: JSON.stringify({})   // 空 JSON 即可，PHP 会自动用 REMOTE_ADDR
   })
   .then(r => r.json())
-  .then(d => console.log('[Debug] IP recorded:', d.ip))
-  .catch(e => console.error('[Debug] Error:', e));
+  .then(d => console.log('[Debug] ngrok IP recorded:', d.ip))
+  .catch(e => console.error('[Debug] ngrok Error:', e));
 
 window.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', function(e) {
@@ -206,3 +206,4 @@ function animate() {
 animate();
 
 });
+
